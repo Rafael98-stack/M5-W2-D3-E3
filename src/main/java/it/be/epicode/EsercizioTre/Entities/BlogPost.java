@@ -1,7 +1,15 @@
 package it.be.epicode.EsercizioTre.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class blogPost {
+@Entity
+@Table(name = "blog_post")
+public class BlogPost {
+    @Id
+    @GeneratedValue
     private long id;
 private String categoria;
 private String titolo;
@@ -9,10 +17,10 @@ private String cover;
 private String contenuto;
 private int tempoDiLettura;
 
-    public blogPost() {
+    public BlogPost() {
     }
 
-    public blogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
+    public BlogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
         this.id = id;
         this.categoria = categoria;
         this.titolo = titolo;

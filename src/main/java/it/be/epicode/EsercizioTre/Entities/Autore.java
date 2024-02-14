@@ -1,4 +1,4 @@
-package it.be.epicode.EsercizioDue.Entities;
+package it.be.epicode.EsercizioTre.Entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

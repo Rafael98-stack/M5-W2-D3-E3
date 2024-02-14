@@ -1,4 +1,4 @@
-package it.be.epicode.EsercizioDue.Controllers;
+package it.be.epicode.EsercizioTre.Controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 

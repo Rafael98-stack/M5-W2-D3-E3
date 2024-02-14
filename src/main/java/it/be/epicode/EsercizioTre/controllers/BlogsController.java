@@ -1,6 +1,6 @@
 package it.be.epicode.EsercizioTre.Controllers;
 
-import it.be.epicode.EsercizioTre.Entities.blogPost;
+import it.be.epicode.EsercizioTre.Entities.BlogPost;
 import it.be.epicode.EsercizioTre.Services.AutorsBlogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +21,13 @@ public class BlogsController {
 //    }
 
     @GetMapping
-    public List<blogPost> getAllBlogs() {
-        return this.autorsBlogsService.getBlog();
+    public List<BlogPost> getAllBlogs() {
+        return this.autorsBlogsService.getBlogs();
     }
 
     @PostMapping
-  public blogPost saveBlogs() {
+  public BlogPost saveBlogs() {
 
-        return this.autorsBlogsService.saveBlogs(new blogPost());
+        return this.autorsBlogsService.saveBlogs(new BlogPost());
     }
 }
