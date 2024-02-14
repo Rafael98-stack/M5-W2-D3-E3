@@ -22,7 +22,7 @@ public class AutorsBlogsService {
 
     public BlogPost saveBlogs(BlogPost newBlog) {
         Random rndm = new Random();
-newBlog.setId(rndm.nextInt(1,100000));
+        newBlog.setTempoDiLettura(rndm.nextInt(1,60));
         this.blogPosts.add(newBlog);
         this.blogPostDAO.save(newBlog);
         return newBlog;
