@@ -4,9 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "blog_post")
+@NoArgsConstructor
+@AllArgsConstructor
 public class BlogPost {
     @Id
     @GeneratedValue
@@ -17,17 +21,17 @@ private String cover;
 private String contenuto;
 private int tempoDiLettura;
 
-    public BlogPost() {
-    }
-
-    public BlogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
-        this.id = id;
-        this.categoria = categoria;
-        this.titolo = titolo;
-        this.cover = cover;
-        this.contenuto = contenuto;
-        this.tempoDiLettura = tempoDiLettura;
-    }
+//    public BlogPost() {
+//    }
+//
+//    public BlogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
+//        this.id = id;
+//        this.categoria = categoria;
+//        this.titolo = titolo;
+//        this.cover = cover;
+//        this.contenuto = contenuto;
+//        this.tempoDiLettura = tempoDiLettura;
+//    }
 
     public long getId() {
         return id;
