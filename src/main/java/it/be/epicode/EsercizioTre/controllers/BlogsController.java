@@ -1,11 +1,8 @@
-package it.be.epicode.EsercizioTre.controllers;
+package it.be.epicode.EsercizioTre.Controllers;
 
-import it.be.epicode.EsercizioTre.Entities.*;
-import it.be.epicode.EsercizioTre.exceptions.NotFoundException;
-import it.be.epicode.EsercizioTre.services.BlogsService;
-import it.be.epicode.EsercizioTre.services.BlogsService;
+import it.be.epicode.EsercizioTre.Entities.blogPost;
+import it.be.epicode.EsercizioTre.Services.AutorsBlogsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,37 +11,23 @@ import java.util.List;
 @RequestMapping("/blogs")
 public class BlogsController {
     @Autowired
-    BlogsService blogsService;
+    private AutorsBlogsService autorsBlogsService;
 
-    // 1. - POST http://localhost:3001/blogs (+ req.body)
-    @PostMapping("")
-    @ResponseStatus(HttpStatus.CREATED) // <-- 201
-    public BlogPost saveBlog(@RequestBody BlogPost body) {
-        return blogsService.save(body);
+//    @PostMapping
+//    // POST su http://localhost:3001/examples/payloadExample (+body)
+//    public Blog_Post payloadExample(@RequestBody Blog_Post body) {
+//        System.out.println("body --> " + body);
+//        return body;
+//    }
+
+    @GetMapping
+    public List<blogPost> getAllBlogs() {
+        return this.autorsBlogsService.getBlog();
     }
 
-    // 2. - GET http://localhost:3001/blogs
-    @GetMapping("")
-    public List<BlogPost> getBlogs() {
-        return blogsService.getBlogs();
-    }
+    @PostMapping
+  public blogPost saveBlogs() {
 
-    // 3. - GET http://localhost:3001/blogs/{id}
-    @GetMapping("/{blogId}")
-    public BlogPost findById(@PathVariable int blogId) {
-        return blogsService.findById(blogId);
-    }
-
-    // 4. - PUT http://localhost:3001/blogs/{id} (+ req.body)
-    @PutMapping("/{blogId}")
-    public BlogPost findAndUpdate(@PathVariable int blogId, @RequestBody BlogPost body) {
-        return blogsService.findByIdAndUpdate(blogId, body);
-    }
-
-    // 5. - DELETE http://localhost:3001/blogs/{id
-    @DeleteMapping("/{blogId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT) // <-- 204 NO CONTENT
-    public void findAndDelete(@PathVariable int blogId) {
-        blogsService.findByIdAndDelete(blogId);
+        return this.autorsBlogsService.saveBlogs(new blogPost());
     }
 }
