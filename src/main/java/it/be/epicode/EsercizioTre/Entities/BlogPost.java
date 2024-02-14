@@ -1,46 +1,31 @@
 package it.be.epicode.EsercizioTre.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "blog_post")
-public class BlogPost {
-    @Id
-    @GeneratedValue
-    private int id;
+public class blogPost {
+    private long id;
 private String categoria;
 private String titolo;
 private String cover;
 private String contenuto;
 private int tempoDiLettura;
 
-//    public blogPost() {
-//    }
-//
-//    public blogPost(UUID id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
-//        this.id = id;
-//        this.categoria = categoria;
-//        this.titolo = titolo;
-//        this.cover = cover;
-//        this.contenuto = contenuto;
-//        this.tempoDiLettura = tempoDiLettura;
-//    }
+    public blogPost() {
+    }
 
-    public int getId() {
+    public blogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
+        this.id = id;
+        this.categoria = categoria;
+        this.titolo = titolo;
+        this.cover = cover;
+        this.contenuto = contenuto;
+        this.tempoDiLettura = tempoDiLettura;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
